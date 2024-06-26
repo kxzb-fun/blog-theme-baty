@@ -3,7 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "description": "blog theme",
-  "devDependencies": {},
+  "devDependencies": {
+    "@astrojs/preact": "^3.5.0",
+    "preact": "^10.22.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
