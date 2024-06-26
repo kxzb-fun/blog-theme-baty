@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+const posts = await getCollection("posts");
+const pageTitle = "我的 Astro 学习博客";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>在这里，我将分享我的学习 Astro 的之旅。</p>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/posts/${post.slug}/`}>{post.data?.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
