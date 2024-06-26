@@ -1,27 +1,16 @@
 ---
-const headerList = [
-  {
-    name: "Home",
-    path: "/",
-  },
-  {
-    name: "Posts",
-    path: "/posts",
-  },
-  {
-    name: "Journal",
-    path: "/journal",
-  },
-];
+import { MENUS } from "../../config";
+// TODO
+// import { MENUS } from "@config";
 ---
 
 <header>
   <nav id="nav-menu">
     <ul id="menu-items">
       {
-        headerList.map((header) => (
+        MENUS.map((header) => (
           <li>
-            <a href={header.path}>{header.name}</a>
+            <a href={header.pageRef}>{header.name}</a>
           </li>
         ))
       }

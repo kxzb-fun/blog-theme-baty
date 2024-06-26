@@ -8,3 +8,8 @@ export type Site = {
     postPerPage: number;
     scheduledPostMargin: number;
 };
+
+export type Menu = {
+    name: string,
+    pageRef: string,
+}
