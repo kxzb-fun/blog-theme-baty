@@ -1,0 +1,30 @@
+---
+const headerList = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Posts",
+    path: "/posts",
+  },
+  {
+    name: "Journal",
+    path: "/journal",
+  },
+];
+---
+
+<header>
+  <nav id="nav-menu">
+    <ul id="menu-items">
+      {
+        headerList.map((header) => (
+          <li>
+            <a href={header.path}>{header.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
