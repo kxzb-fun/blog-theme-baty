@@ -1,0 +1,33 @@
+---
+import { SOCIALS } from "@config";
+import socialIcons from "@assets/sociallcos";
+// console.log(SOCIALS.filter((social) => social.active));
+// console.log(socialIcons["Github"]);
+---
+
+<footer class="px-8 pt-32 pb-24 w-fit m-auto footer">
+  <div class="flex-col items-center">
+    <p class="text-[#777]">Copyright &#169; 2000-2024 name</p>
+    <p class="flex justify-center">
+      {
+        SOCIALS.filter((social) => social.active).map((social) => (
+          <a href={social.href} class="p-1">
+            <Fragment set:html={socialIcons[social.name]} />
+          </a>
+        ))
+      }
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer::before {
+    content: "";
+    display: block;
+    margin-inline: auto;
+    width: 2.5rem;
+    height: 1px;
+    background-color: #777;
+    margin-bottom: 1.5rem;
+  }
+</style>

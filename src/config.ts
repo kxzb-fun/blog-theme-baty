@@ -1,4 +1,4 @@
-import type { Site, Menu, Hero, HomePage } from "./types";
+import type { Site, Menu, Hero, HomePage, SocialObjects } from "./types";
 
 export const SITE: Site = {
     website: "https://kxzb.fun/", // replace this with your deployed domain
@@ -40,6 +40,27 @@ export const HERO: Hero = {
     image: ""
 }
 
-export const HOMEPAGE = {
+export const HOMEPAGE: HomePage = {
     recentLimit: 10,
 }
+
+export const SOCIALS: SocialObjects = [
+    {
+        name: "Github",
+        href: "https://kxzb.fun",
+        linkTitle: ` ${SITE.title} on Github`,
+        active: true,
+    },
+    {
+        name: "LinkedIn",
+        href: "https://kxzb.fun",
+        linkTitle: `${SITE.title} on LinkedIn`,
+        active: true,
+    },
+    {
+        name: "Twitter",
+        href: "https://kxzb.fun",
+        linkTitle: `${SITE.title} on Twitter`,
+        active: true,
+    }
+];

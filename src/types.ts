@@ -1,3 +1,5 @@
+import type socialIcons from "@assets/sociallcos";
+
 export type Site = {
     website: string;
     author: string;
@@ -23,3 +25,10 @@ export type Hero = {
 export type HomePage = {
     recentLimit: number
 }
+
+export type SocialObjects = {
+    name: keyof typeof socialIcons;
+    href: string;
+    active: boolean;
+    linkTitle: string;
+}[];
