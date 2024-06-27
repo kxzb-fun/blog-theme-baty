@@ -5,7 +5,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Hero from "@components/Hero.astro";
 import PostCard from "@components/PostCard.tsx";
-
+import { HOMEPAGE } from "@config";
 import getSortedPosts from "@utils/getSortedPost";
 
 const posts = await getCollection("posts");
@@ -17,17 +17,30 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 <Layout>
   <Hero />
   <Header />
-  <main id="main-content" class="flex justify-center">
+  <main
+    id="main-content"
+    class="max-w-4xl mx-auto px-4 flex justify-center flex-col items-center"
+  >
     {
       recentPosts.length > 0 && (
         <section id="recent-posts">
           {recentPosts.map(
             ({ data, slug }, index) =>
-              index < 4 && (
+              index < HOMEPAGE.recentLimit && (
                 <PostCard href={`/posts/${slug}/`} frontmatter={data} />
               )
           )}
         </section>
+      )
+    }
+
+    {
+      recentPosts.length > HOMEPAGE.recentLimit && (
+        <div class="my-6 max-w-3xl">
+          <a href="/posts">
+            See all {recentPosts.length} posts in the archive →
+          </a>
+        </div>
       )
     }
   </main>

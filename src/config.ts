@@ -1,4 +1,4 @@
-import type { Site, Menu, Hero } from "./types";
+import type { Site, Menu, Hero, HomePage } from "./types";
 
 export const SITE: Site = {
     website: "https://kxzb.fun/", // replace this with your deployed domain
@@ -38,4 +38,8 @@ export const HERO: Hero = {
     title: "kxzb",
     secDes: "",
     image: ""
+}
+
+export const HOMEPAGE = {
+    recentLimit: 10,
 }

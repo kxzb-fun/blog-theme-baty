@@ -19,3 +19,7 @@ export type Hero = {
     secDes?: string,
     image?: string
 }
+
+export type HomePage = {
+    recentLimit: number
+}
