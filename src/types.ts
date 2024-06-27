@@ -13,3 +13,9 @@ export type Menu = {
     name: string,
     pageRef: string,
 }
+
+export type Hero = {
+    title: string,
+    secDes?: string,
+    image?: string
+}

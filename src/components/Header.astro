@@ -4,10 +4,13 @@ import { MENUS } from "@config";
 
 <header>
   <nav id="nav-menu">
-    <ul id="menu-items">
+    <ul
+      id="menu-items"
+      class="h-14 bg-[rgb(239,239,239)] border-b flex items-center justify-center sm:flex-row;"
+    >
       {
         MENUS.map((header) => (
-          <li>
+          <li class="p-4 font-semibold">
             <a href={header.pageRef}>{header.name}</a>
           </li>
         ))

@@ -12,25 +12,21 @@ const posts = await getCollection("posts");
 const sortedPosts = getSortedPosts(posts);
 
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
-// console.log(recentPosts[0]);
 ---
 
 <Layout>
   <Hero />
   <Header />
-  <main id="main-content">
+  <main id="main-content" class="flex justify-center">
     {
       recentPosts.length > 0 && (
         <section id="recent-posts">
-          <h2>Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              ({ data, slug }, index) =>
-                index < 4 && (
-                  <PostCard href={`/posts/${slug}/`} frontmatter={data} />
-                )
-            )}
-          </ul>
+          {recentPosts.map(
+            ({ data, slug }, index) =>
+              index < 4 && (
+                <PostCard href={`/posts/${slug}/`} frontmatter={data} />
+              )
+          )}
         </section>
       )
     }

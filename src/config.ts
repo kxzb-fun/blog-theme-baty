@@ -1,7 +1,7 @@
-import type { Site, Menu } from "./types";
+import type { Site, Menu, Hero } from "./types";
 
 export const SITE: Site = {
-    website: "https://example.com/", // replace this with your deployed domain
+    website: "https://kxzb.fun/", // replace this with your deployed domain
     author: "kxzb.fun",
     desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
     title: "MyBlog",
@@ -14,7 +14,7 @@ export const SITE: Site = {
 export const MENUS: Menu[] = [
     {
         name: "Home",
-        pageRef: "/home",
+        pageRef: "/",
     },
     {
         name: "Posts",
@@ -33,3 +33,9 @@ export const MENUS: Menu[] = [
         pageRef: "/more",
     }
 ]
+
+export const HERO: Hero = {
+    title: "kxzb",
+    secDes: "",
+    image: ""
+}
