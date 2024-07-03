@@ -1,4 +1,5 @@
 import type { CollectionEntry } from "astro:content";
+import Datetime from "@components/DateTime";
 
 export interface Props {
   href?: string;
@@ -15,8 +16,9 @@ export default function PostCard({ href, frontmatter }: Props) {
       </header>
       <div class="m-8">
         <p class="text-[#415462] text-base">{description}</p>
-        {/* TODO pubDate */}
-        <div class="mt-4 text-[#777]">2024-06-26</div>
+        <div class="mt-4 text-[#777]">
+          <Datetime pubDatetime={pubDate} modDatetime={modDate} />
+        </div>
       </div>
     </article>
   );
